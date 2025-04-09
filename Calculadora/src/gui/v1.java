@@ -34,6 +34,7 @@ public class v1 extends JFrame implements ActionListener {
 	private JButton btnNewButton;
 	private JButton btnSumar3enteros;
 	private JButton btnSumar2reales;
+	private JButton btnNewButton_1;
 
 	/**
 	 * Launch the application.
@@ -122,6 +123,12 @@ public class v1 extends JFrame implements ActionListener {
 			btnSumar2reales.setBounds(287, 57, 117, 23);
 			contentPane.add(btnSumar2reales);
 		}
+		{
+			btnNewButton_1 = new JButton("New button");
+			btnNewButton_1.addActionListener(this);
+			btnNewButton_1.setBounds(181, 7, 89, 23);
+			contentPane.add(btnNewButton_1);
+		}
 	}
 	
 
@@ -148,6 +155,9 @@ public class v1 extends JFrame implements ActionListener {
 
 	
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnNewButton_1) {
+			do_btnNewButton_1_actionPerformed(e);
+		}
 		if (e.getSource() == btnSumar2reales) {
 			do_btnSumar2reales_actionPerformed(e);
 		}
@@ -178,6 +188,9 @@ public class v1 extends JFrame implements ActionListener {
 		double num2 = Double.parseDouble(txtNum2.getText());
 		calculadora c2 = new calculadora(num1,num2);
 		txtS.append("La suma es : " +c2.Sumar(num1, num2));
+	}
+	protected void do_btnNewButton_1_actionPerformed(ActionEvent e) {
+		
 	}
 }
 
